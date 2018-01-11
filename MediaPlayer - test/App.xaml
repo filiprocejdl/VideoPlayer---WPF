@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:MediaPlayer___test"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="WindowStyle" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="Red" />
+        </Style>
     </Application.Resources>
 </Application>

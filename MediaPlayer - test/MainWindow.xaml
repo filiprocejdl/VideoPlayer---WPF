@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer___test"
         mc:Ignorable="d"
+        Background="#474747"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="320*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <MediaElement x:Name="MediaPlayer"  Grid.RowSpan="1" LoadedBehavior="Manual"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+
+            <Button x:Name="btnPlay" Foreground="{x:Null}" Content="Play" Click="btnPlay_Click"  Width="50" Height="50">
+                <Button.Background>
+                    <ImageBrush x:Name="btnPlayLog" ImageSource="D:\rocejfi15\MEDIA PLAYER\play.png"></ImageBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnMoveBack"  Click="btnMoveBack_Click" Width="50" Height="50">
+                <Button.Background>
+                    <ImageBrush ImageSource="D:\rocejfi15\MEDIA PLAYER\back.png"></ImageBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnMoveForward"  Click="btnMoveForward_Click" Width="50" Height="50" >
+                <Button.Background>
+                    <ImageBrush ImageSource="D:\rocejfi15\MEDIA PLAYER\forward.png"></ImageBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnOpen" Click="btnOpen_Click" Width="50" Height="50" >
+                <Button.Background>
+                    <ImageBrush ImageSource="D:\rocejfi15\MEDIA PLAYER\open.png"></ImageBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnMute" Content="Mute" Foreground="{x:Null}" Click="btnMute_Click" Width="50" Height="50"  >
+                <Button.Background>
+                    <ImageBrush ImageSource="D:\rocejfi15\MEDIA PLAYER\mute.png"></ImageBrush>
+                </Button.Background>
+            </Button>
+            <TextBlock Foreground="White" VerticalAlignment="Center" Margin="5"  >Volume</TextBlock>
+            <Slider Name="volumeSlider" VerticalAlignment="Center" ValueChanged="ChangeMediaVolume" 
+       Minimum="0" Maximum="1" Value="0.5" Width="70"/>
+        </StackPanel>
     </Grid>
 </Window>
